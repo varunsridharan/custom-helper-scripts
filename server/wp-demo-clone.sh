@@ -8,10 +8,9 @@ read
 DEMO_SLUG=$REPLY
 DOMAIN_NAME="${DEMO_SLUG}.sva.one"
 
-echo "Copying Template WP To Domain WP - $DOMAIN_NAME"
 # Create Required Folders & Update Permissions
-mkdir -p "${BASE_DOC_ROOT}/${DOMAIN_NAME}/"
-sudo cp -r "${DEMO_TEMPLATE}/*" "${BASE_DOC_ROOT}/${DOMAIN_NAME}/"
+echo "Copying Template WP To Domain WP - $DOMAIN_NAME"
+cp -r "${DEMO_TEMPLATE}/*" "${BASE_DOC_ROOT}/${DOMAIN_NAME}/"
 rm -rf "${BASE_DOC_ROOT}/${DOMAIN_NAME}/logs"
 mkdir -p "${BASE_DOC_ROOT}/${DOMAIN_NAME}/logs"
 
@@ -19,7 +18,8 @@ mkdir -p "${BASE_DOC_ROOT}/${DOMAIN_NAME}/logs"
 bash ./apache-vhost.sh "$DOMAIN_NAME"
 
 # Creating Database
-php ./wp-sandbox-server/create-db.php "$DOMAIN_NAME"
+echo "Creating Database"
+php ./php/create-db.php "$DOMAIN_NAME"
 
 #DB_HOST=$(awk -F "=" '/HOST/ {print $2}' database-server.ini)
 #DB_USER=$(awk -F "=" '/USER/ {print $2}' database-server.ini)
