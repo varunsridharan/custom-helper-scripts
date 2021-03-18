@@ -23,8 +23,10 @@ $sql = 'CREATE DATABASE ' . $db_name;
 
 if ( $conn->query( $sql ) === true ) {
 	echo 'Database created successfully = ' . $db_name;
+	echo ' ';
 } else {
 	echo 'Error creating database: ' . $conn->error;
+	echo ' ';
 }
 
 $conn->close();
