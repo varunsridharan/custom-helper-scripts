@@ -30,7 +30,7 @@ echo " "
 
 mysqldump --opt --user=$DB_USER --password=$DB_PASS --host=$DB_HOST "$DEMO_TEMPLATE_DB" > $FILE
 mysql --user=$DB_USER --password=$DB_PASS --host=$DB_HOST "$TO_DATABASE" < $FILE
-
+rm -rf $FILE
 ##########################################################
 ######### Copying & Updating File Permission     #########
 ##########################################################
