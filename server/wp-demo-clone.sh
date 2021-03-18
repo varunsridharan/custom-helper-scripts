@@ -6,7 +6,7 @@ MYSQL_CREDS="${BASE_DOC_ROOT}/global-files/database-server.ini"
 echo "Demo Instance Slug :"
 read
 DEMO_SLUG=$REPLY
-DOMAIN_DOMAIN="${DEMO_SLUG}.sva.one"
+DOMAIN_NAME="${DEMO_SLUG}.sva.one"
 
 echo "Copying Template WP To Domain WP - $DOMAIN_NAME"
 # Create Required Folders & Update Permissions
