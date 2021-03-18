@@ -2,9 +2,14 @@
 
 BASE_DOC_ROOT="/var/www"
 
-echo "Enter New Site Domain :"
-read
-DOMAIN_NAME=$REPLY
+if [ -z "$1" ]
+then
+        echo "Enter New Site Domain :"
+        read
+        DOMAIN_NAME="$REPLY"
+else
+        DOMAIN_NAME="$1"
+fi
 
 if [ -d "${BASE_DOC_ROOT}/${DOMAIN_NAME}" ]
 then
