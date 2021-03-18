@@ -13,7 +13,6 @@ else
         # Create Required Folders & Update Permissions
         mkdir -p "${BASE_DOC_ROOT}/${DOMAIN_NAME}/public"
         mkdir -p "${BASE_DOC_ROOT}/${DOMAIN_NAME}/logs"
-        
 fi
 
 # Update Folder Permission
