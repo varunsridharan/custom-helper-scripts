@@ -11,7 +11,7 @@ DOMAIN_NAME="${DEMO_SLUG}.sva.one"
 echo "Copying Template WP To Domain WP - $DOMAIN_NAME"
 # Create Required Folders & Update Permissions
 mkdir -p "${BASE_DOC_ROOT}/${DOMAIN_NAME}/"
-sudo cp "${DEMO_TEMPLATE}/*" "${BASE_DOC_ROOT}/${DOMAIN_NAME}/"
+sudo cp -r "${DEMO_TEMPLATE}/*" "${BASE_DOC_ROOT}/${DOMAIN_NAME}/"
 rm -rf "${BASE_DOC_ROOT}/${DOMAIN_NAME}/logs"
 mkdir -p "${BASE_DOC_ROOT}/${DOMAIN_NAME}/logs"
 
