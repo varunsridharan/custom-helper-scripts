@@ -6,13 +6,22 @@ echo "Enter New Site Domain :"
 read
 DOMAIN_NAME=$REPLY
 
-# Create Required Folders & Update Permissions
-mkdir -p "${BASE_DOC_ROOT}/${DOMAIN_NAME}/public"
-mkdir -p "${BASE_DOC_ROOT}/${DOMAIN_NAME}/logs"
-chown -R www-data:www-data "${BASE_DOC_ROOT}/${DOMAIN_NAME}"
-#sudo find /var/www/wordpress/ -type d -exec chmod 750 {} \;
-#sudo find /var/www/wordpress/ -type f -exec chmod 640 {} \;
+if [ -d "${BASE_DOC_ROOT}/${DOMAIN_NAME}" ]
+then
+        echo "Doc Root Already Exists"
+else
+        # Create Required Folders & Update Permissions
+        mkdir -p "${BASE_DOC_ROOT}/${DOMAIN_NAME}/public"
+        mkdir -p "${BASE_DOC_ROOT}/${DOMAIN_NAME}/logs"
+        
+fi
 
+# Update Folder Permission
+sudo find "${BASE_DOC_ROOT}/${DOMAIN_NAME}" -type d -exec chmod 750 {} \;
+sudo find "${BASE_DOC_ROOT}/${DOMAIN_NAME}" -type f -exec chmod 640 {} \;
+chown -R www-data:www-data "${BASE_DOC_ROOT}/${DOMAIN_NAME}"
+        
+        
 # Create Apache Config
 APACHE_CONFIG="/etc/apache2/sites-available/${DOMAIN_NAME}.conf"
 touch "$APACHE_CONFIG"
