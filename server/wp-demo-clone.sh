@@ -1,6 +1,7 @@
 #!/bin/bash
-DEMO_TEMPLATE="/var/www/template.sva.one"
-MYSQL_CREDS="/var/www/global-files/database-server.ini"
+BASE_DOC_ROOT="/var/www"
+DEMO_TEMPLATE="${BASE_DOC_ROOT}/template.sva.one"
+MYSQL_CREDS="${BASE_DOC_ROOT}/global-files/database-server.ini"
 
 echo "Demo Instance Slug :"
 read
