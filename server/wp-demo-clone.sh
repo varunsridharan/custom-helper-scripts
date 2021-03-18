@@ -22,7 +22,7 @@ mysql --user=$DB_USER --password=$DB_PASS --host=$DB_HOST -e "CREATE DATABASE IF
 
 echo "Copying Database"
 mysqldump --opt --user=$DB_USER --password=$DB_PASS --host=$DB_HOST "$DEMO_TEMPLATE_DB" > $FILE
-mysqldump --opt --user=$DB_USER --password=$DB_PASS --host=$DB_HOST "$TO_DATABASE" < $FILE
+mysql --user=$DB_USER --password=$DB_PASS --host=$DB_HOST "$TO_DATABASE" < $FILE
 
 # Create Required Folders & Update Permissions
 #echo "Copying WordPress Files"
