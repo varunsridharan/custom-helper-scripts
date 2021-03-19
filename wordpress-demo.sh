@@ -2,7 +2,7 @@
 BASE_DOC_ROOT="/var/www"
 DEMO_TEMPLATE="${BASE_DOC_ROOT}/template.sva.one"
 DEMO_TEMPLATE_DB="wpdemos_template"
-MYSQL_CREDS="${BASE_DOC_ROOT}/global-files/database-server.ini"
+MYSQL_CREDS="${BASE_DOC_ROOT}/helpers/database-server.ini"
 FILE=db.`date +"%Y%m%d-%H%M%S"`.sql
 
 echo " "
